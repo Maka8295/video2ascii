@@ -1,7 +1,7 @@
 
 # video2ascii
 
-My final project for Harvard's CS50. This program converts any video into a series of BMP images, and then converts those into ASCII art.
+My final project for Harvard's CS50. This program converts any video into a series of BMP images, converts those into ASCII art and then plays them back in the terminal. 
 
 #### Video Demo: TODO
 
