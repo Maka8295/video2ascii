@@ -11,6 +11,8 @@ First the bash script badapple.sh creates the neccesary directories and using ff
 
 The script then uses my ascii art generation program written in C to generate a txt file for every image. This program first pulls the metadata out of the header of its input BMP file. Using this metadata we can find where in the file the raw pixel data starts, as well as the images resolution. 
 
+The pixel data is converted into a two dimensional array with each value corresponding to brightness (a colours.c also supports full colour but does not yet support full colour output!). It is then "blurred", by averaging pixel data in a 9x9 square, and then compressed into a smaller 2d array. It then samples the brightness of each pixel and maps it to a corresponding ASCII character, you can easilly swap these out for different characters if you wish!
+
 Finally the play.sh script loads the original audio using mpv, then cycles through every txt file and displays its contents, being careful to time them correctly so that it remains synced with the audio. The frame time can befound from the ammount of txt files generated divided by the length of the video, which is done automatically.
 
 ## Dependencies
