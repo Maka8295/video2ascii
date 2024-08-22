@@ -8,7 +8,9 @@ My final project for Harvard's CS50. This program converts any video into a seri
 ## How it works
 
 First the bash script badapple.sh creates the neccesary directories and using ffmpeg samples the provided videos into bmp images, with 30 samples being taken a second for 30fps playback.
+
 The script then uses my ascii art generation program written in C to generate a txt file for every image. This program first pulls the metadata out of the header of its input BMP file. Using this metadata we can find where in the file the raw pixel data starts, as well as the images resolution. 
+
 Finally the play.sh script loads the original audio using mpv, then cycles through every txt file and displays its contents, being careful to time them correctly so that it remains synced with the audio. The frame time can befound from the ammount of txt files generated divided by the length of the video, which is done automatically.
 
 ## Dependencies
@@ -44,10 +46,14 @@ Now run the script to generate the ASCII and other neccesary files.
 
 Finally execute the play script, you might need to resize the terminal for it to display properly. The video file must stay in the same directory because audio is used from the original file.
 
+```
+./play.sh your_video
+```
+
 If you want to mute the audio use the following command:
 
 ```
-./badapple.sh your_video mute
+./play.sh your_video mute
 ```
 
 If you want to make an ASCII image for a single input image:
